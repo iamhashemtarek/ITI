@@ -1,0 +1,18 @@
+# Ignore build folders
+bin/
+obj/
+
+# Ignore user-specific files
+.vs/
+*.user
+*.suo
+
+# Ignore logs
+*.log
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore sensitive configuration
+appsettings.*.json

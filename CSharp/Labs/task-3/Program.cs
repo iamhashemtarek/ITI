@@ -51,6 +51,30 @@
             //}
             #endregion
 
+            #region part2
+            //Question q = new Question("true or false", 4, "c# supports multipile inheritance.");
+            //Console.WriteLine(q.getQuestionDetails());
+
+            //Question q2 = new TrueOrFalseQuestion(4, "c# supports multipile inheritance.", true);
+            //Console.WriteLine(q2.getQuestionDetails());
+
+            //Question q3 = new ChooseOneQuestion(4, "c# supports multipile inheritance.", ["option1", "option2", "option3"], "option1");
+            //Console.WriteLine(q3.getQuestionDetails());
+
+            //Question q4 = new chooseAllQuestion(4, "c# supports multipile inheritance.", ["option1", "option2", "option3"], ["option1", "option2"]);
+            //Console.WriteLine(q4.getQuestionDetails());
+
+            Question[] questionArr = new Question[3];
+            questionArr[0] = new TrueOrFalseQuestion(4, "c# supports multiple inheritance.", false); 
+            questionArr[1] = new ChooseOneQuestion(5, "c# supports multipile inheritance.", ["option1", "option2", "option3"], "option1");
+            questionArr[2] = new chooseAllQuestion(6, "c# supports multipile inheritance.", ["option1", "option2", "option3"], ["option1", "option2"]);
+
+            for (int i = 0; i < questionArr.Length; i++) 
+            {
+                Console.WriteLine($"----question no.{i+1}: \n {questionArr[i].getQuestionDetails()}");
+            }
+
+            #endregion
         }
     }
 }

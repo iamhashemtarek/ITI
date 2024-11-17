@@ -2,7 +2,7 @@
 
 namespace task_2
 {
-    internal class Utility
+    internal class Utilitys
     {
         public static void sortTimeSpan(TimeSpan[] timeSpanArr)
         {

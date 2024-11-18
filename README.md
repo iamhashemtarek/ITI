@@ -145,3 +145,76 @@ Can you optimize this to compute the result in approximately 1 second or less?
 
 3. **Array of Questions:**
    - Create an array that accepts only `True or False`, `Choose One`, and `Choose All` question types.
+## Task 4
+
+
+
+### Part 1: Math Class
+
+1. **Program Requirements**
+   - Write a program with a **Math** class containing four methods:
+     - **Add**
+     - **Subtract**
+     - **Multiply**
+     - **Divide**
+   - Each method should take two parameters.
+   - Call each method from the `Main()` function.
+
+2. **Modify the Program**
+   - Update the program so that you do not have to create an instance of the **Math** class to call the four methods.
+
+---
+
+### Part 2: Duration Class
+
+1. **Define a Class `Duration`**
+   - Include three attributes:
+     - `Hours`
+     - `Minutes`
+     - `Seconds`
+
+2. **Constructor Requirements**
+   - Support constructors to produce the following outputs:
+     - Example 1:
+       ```csharp
+       Duration D1 = new Duration(1, 10, 15);
+       D1.GetString();
+       // Output: Hours: 1, Minutes: 10, Seconds: 15
+       ```
+     - Example 2:
+       ```csharp
+       Duration D1 = new Duration(3600);
+       D1.GetString();
+       // Output: Hours: 1, Minutes: 0, Seconds: 0
+       ```
+     - Example 3:
+       ```csharp
+       Duration D2 = new Duration(7800);
+       D2.GetString();
+       // Output: Hours: 2, Minutes: 10, Seconds: 0
+       ```
+     - Example 4:
+       ```csharp
+       Duration D3 = new Duration(666);
+       D3.GetString();
+       // Output: Minutes: 11, Seconds: 6
+       ```
+
+3. **Operator Overloading**
+   - Implement all required operator overloads to support the following functionality:
+     - `D3 = D1 + D2;`
+     - `D3 = D1 + 7800;`
+     - `D3 = 666 + D3;`
+     - `D3 = D1++;` *(Increase by one minute)*
+     - `D3 = --D2;` *(Decrease by one minute)*
+     - `D1 = -D2;`
+     - Conditional operations:
+       - `if (D1 > D2)`
+       - `if (D1 <= D2)`
+       - `if (D1)`
+
+4. **Type Conversion**
+   - Enable type conversion to `DateTime`:
+     ```csharp
+     DateTime Obj = (DateTime)D1;
+     ```

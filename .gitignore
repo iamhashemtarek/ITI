@@ -1,18 +1,127 @@
-# Ignore build folders
+# General
+.DS_Store
+Thumbs.db
+*.log
+*.bak
+*.tmp
+
+# ===== C# (.NET Projects) =====
+# Build results
 bin/
 obj/
+*.exe
+*.dll
+*.pdb
 
-# Ignore user-specific files
-.vs/
+# User-specific files
 *.user
 *.suo
+*.userosscache
+*.sln.docstates
 
-# Ignore logs
+# Visual Studio files
+.vscode/
+.vs/
+
+# Rider files
+.idea/
+*.sln.iml
+
+# Packages
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+
+# Temporary files
+~$*
+*.tmp
+*.temp
+*.cache
+
+# Publish folder
+publish/
+
+# Local configuration files
+appsettings.Development.json
+
+# Resharper files
+_ReSharper*/
+*.DotSettings.user
+
+# ===== Node.js Backend (Express, etc.) =====
+# Logs
+logs/
 *.log
 
-# Ignore IDE-specific files
+# Dependency directories
+node_modules/
+
+# Environment variables
+.env
+
+# Production build
+build/
+
+# NPM/Yarn related files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===== Frontend (React, Angular, Vue, etc.) =====
+# Dependency directories
+node_modules/
+
+# Production build
+dist/
+build/
+
+# Temporary files
+*.cache
+*.tmp
+*.temp
+
+# Testing
+coverage/
+*.spec.js
+*.spec.ts
+*.test.js
+*.test.ts
+
+# Environment variables
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*
+
+# Next.js
+.next/
+
+# Angular
+.angular/
+
+# Vue.js
+*.local
+
+# Parcel/Babel/Webpack
+.cache/
+.parcel-cache/
+
+# Generated files
+*.map
+*.d.ts
+
+# ===== Common Editor Files =====
+# VS Code
 .vscode/
+*.code-workspace
+
+# JetBrains
 .idea/
 
-# Ignore sensitive configuration
-appsettings.*.json
+# Sublime Text
+*.sublime-*
+
+# MacOS
+.DS_Store

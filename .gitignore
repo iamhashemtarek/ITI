@@ -126,5 +126,3 @@ coverage/
 # MacOS
 .DS_Store
 
-#folders
-FrontEnd/

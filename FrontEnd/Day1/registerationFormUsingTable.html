@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+   <form action="">
+    <table border="1px">
+        <tr>
+            <th colspan="2">Registration Form</th>
+        </tr>
+        <tr>
+            <td><label for="fname">first name</label></td>
+            <td>
+                <input type="text" id="fname" name="fname">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="lname">first name</label></td>
+            <td>
+                <input type="text" id="lname" name="lname">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="username">first name</label></td>
+            <td>
+                <input type="text" id="username" name="username">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="pwd">first name</label></td>
+            <td>
+                <input type="password" id="pwd" name="pwd">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="track">track</label></td>
+            <td>
+               <select id="track" name="track">
+                <option value="backend">backend</option>
+                <option value="frontend">frontend</option>
+                <option value="devops">devops</option>
+               </select>
+            </td>
+        </tr>
+        <tr>
+            <td ><label for="gender">gender</label></td>
+            <td>
+               <input type="radio" name="gender" id="male" value="male">
+               <label for="male">male</label>
+               <br>
+               <input type="radio" name="gender" id="femal" value="female">
+               <label for="female">female</label>
+            </td>
+        </tr>
+        <tr>
+            <td ><label for="favorites">favorites</label></td>
+            <td>
+               <input type="checkbox" name="football" id="football" value="football">
+               <label for="male">football</label>
+               <input type="checkbox" name="americanfootball" id="americanfootball" value="americanfootball">
+               <label for="male">american football</label>
+               <br>
+               <input type="checkbox" name="swimming" id="swimming" value="swimming">
+               <label for="male">swimming</label>
+               <input type="checkbox" name="reading" id="reading" value="reading">
+               <label for="male">reading</label>
+            </td>
+        </tr>
+        <tr>
+            <td ><label for="description">description</label></td>
+            <td>
+                <textarea name="description" id="description" cols="20" rows="7"></textarea>
+            </td>
+        </tr>
+        <tr >
+            <td colspan="2">
+                <button type="submit">submit</button>
+                <button type="reset">reset</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <label for="file">select a file</label>
+                <input type="file" id="file" name="file">
+            </td>
+        </tr>
+    </table>
+   </form>
+</body>
+</html>

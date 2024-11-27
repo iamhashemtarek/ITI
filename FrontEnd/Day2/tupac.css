@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none; 
+    color: inherit; 
+  }
+li {
+    list-style: none;
+  }
+
+.header {
+    background-image: url('./images/tupacCover.jpg');
+    /* background-color: seagreen; */
+    background-size: contain;
+    background-size: 100vw 100vh ;
+    background-repeat: no-repeat;
+    height: 80vh;
+    text-align: center;
+    position: relative;
+}
+.nav {
+    display: inline-block;
+    width: 60vw;
+    text-align: center;
+    background-color: whitesmoke;
+    margin: 20px;
+    border-radius: 7px;
+}
+.nav li {
+    float: right;
+    border: 10px;
+    margin: 0px 10px;
+    padding: 20px;
+    color: gray;
+    text-transform: capitalize;
+    border-radius: 7px;
+    
+}
+.logo {
+    float: left;
+    padding: 20px;
+    font-size: larger;
+    font-weight: 900;
+    color:gray;
+    text-transform: capitalize;
+
+}
+.nav li:hover {
+    background-color: gainsboro;
+
+}
+.headerContent {
+    position:absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: whitesmoke;
+}
+.headerContent  h2 {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 10px;
+}
+.headerContent p {
+    margin: 20px 0px;
+}
+.headerContent a {
+    display: inline-block;
+    margin-bottom: 30px;
+    font-size: larger;
+    color: gray;
+    background-color: whitesmoke;
+    padding: 15px 50px;
+    border-radius: 7px;
+    
+}
+.headerContent a:hover {
+    background-color: gray;
+    color: whitesmoke;
+}
+.main {
+    background-color: whitesmoke;
+    color: rgb(107, 107, 107);
+    text-align: center;
+    padding: 20px;
+}
+
+.secHeader {
+    font-weight: bolder;
+    margin: 10px;
+}
+.secContent {
+    margin: 5px;
+}
+
+.secImages .img {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: gainsboro;
+    position: relative;
+    margin: 20px 10px;
+}
+.secImages .img p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+.section2 {
+    width: 68%;
+    margin: auto;
+}
+.section2 .secImages .img {
+    width: 20%;
+}

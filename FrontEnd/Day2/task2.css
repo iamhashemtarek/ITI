@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: inherit; 
+  }
+
+.header {
+    position: relative;
+}
+
+.header .top {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border-bottom: 3px solid whitesmoke;
+}
+.header .images {
+    text-align: center;
+}
+.header .images img {
+    display: inline-block;
+    margin: 30px 10px;
+}
+.header .btm {
+    position: absolute;
+    bottom: 10px;
+    right: 300px;
+    color: orange;
+   
+}
+.sampleContainer {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center; /* Center the samples horizontally */
+    align-items: center; /* Center them vertically if necessary */
+    flex-wrap: wrap; /* Allow wrapping to the next line if there are too many samples */
+    gap: 20px; /* Add space between the samples */
+    padding: 20px;
+    background-color: white; /* Optional: Add a background color for visibility */
+    border-top: 3px solid whitesmoke;
+    
+}
+.sample {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    max-width: 20%;
+    position: relative;
+}
+
+.sampleHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo {
+    margin-right: 10px;
+}
+
+.hdr {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.cntn {
+    margin-bottom: 20px;
+}
+
+.link {
+    color: orange;
+    text-decoration: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+/* .footer {
+    position: relative;
+    width: 80%;
+   
+}
+.footer .right {
+    position: absolute;
+    left: 15%;
+}
+.footer .left {
+    position: absolute;
+    right: 15%;
+} */
+.footer {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-top: 2px solid #ccc;
+    font-size: 14px;
+    overflow: hidden;
+    position: relative;
+}
+
+.footer .left {
+    float: left;
+    width: 70%;
+    text-align: left;
+}
+
+.footer .right {
+    float: right;
+    width: 30%;
+    text-align: right;
+}
+
+.footer a {
+    color: orange;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,48 @@
+.header {
+    color: skyblue;
+    text-align: center;
+}
+.inputSection {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+}
+.label {
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    margin-right: 20px;
+}
+.main {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-between;
+}
+ input {
+    border: 1px solid skyblue;
+    width: 70px;
+    height: 30px;
+    /* margin-top: 7px; */
+}
+.outputSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+}
+.inputSection .label {
+    background-color: greenyellow;
+}
+.outputSection .label {
+    background-color: rgb(72, 72, 232);
+}
+.sentenceSec input {
+    width: 200px;
+}

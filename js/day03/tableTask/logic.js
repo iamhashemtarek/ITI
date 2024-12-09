@@ -2,6 +2,7 @@ const addStButton = document.getElementById('addSt');
 const studentNameInput = document.querySelector('.studentName input');
 const studentAgeInput = document.querySelector('.studentAge input');
 const table = document.querySelector('table');
+const ageError = document.getElementById('ageError')
 
 let studentID = 1;
 
@@ -11,6 +12,11 @@ addStButton.addEventListener('click', () => {
 
   if (!studentName || !studentAge) {
     alert('Please enter a valid name and age.');
+    return;
+  }
+  
+  if(studentAge < 18) {
+    ageError.style.visibility = 'visible';
     return;
   }
 
@@ -41,4 +47,6 @@ addStButton.addEventListener('click', () => {
 
   studentNameInput.value = '';
   studentAgeInput.value = '';
+  ageError.style.visibility = 'hidden';
+  
 });

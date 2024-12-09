@@ -30,3 +30,8 @@ input {
 .input {
     text-align: center;
 }
+#ageError {
+    color: red;
+    font-size: 13px;
+    visibility: hidden;
+}

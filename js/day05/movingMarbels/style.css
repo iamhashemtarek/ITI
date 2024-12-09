@@ -1,0 +1,23 @@
+/* * {
+    font-family: arial, sans-serif;
+} */
+
+.marbles {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.marble {
+    width: 50px;
+    height: 50px;
+    margin-top: 200px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%);
+}
+.active {
+    /* background-color: red; */
+    background: hsla(339, 100%, 55%, 1);
+}

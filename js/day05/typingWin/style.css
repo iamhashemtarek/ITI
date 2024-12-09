@@ -1,0 +1,10 @@
+* {
+    font-family: arial, sans-serif;
+}
+button {
+    width: 200px;
+    height: 30px;
+    color: whitesmoke;
+    background-color: gold;
+    border: 2px solid gray;
+}

@@ -1,0 +1,16 @@
+* {
+    font-family: arial, sans-serif;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+}

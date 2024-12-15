@@ -60,6 +60,7 @@ namespace task_3
         male, 
         female,
     }
+    
     internal class Employee
     {
         int id;

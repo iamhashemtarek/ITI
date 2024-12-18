@@ -12,6 +12,7 @@ namespace task_8
         private int id = 0;
         public event EventHandler AddEmployee;
         public event EventHandler RemoveEmployee;
+        //public Club club;
         public int Id 
         {
             get { return this.id; }

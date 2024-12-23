@@ -138,9 +138,11 @@ p {
   height: 50px;
   text-align: center;
   margin: 23px 23px 23px 0px;
-  border-color: rgb(197, 193, 193);
+  /* border-color: rgb(197, 193, 193); */
   /* border-radius: 3px; */
-  border-width: 0.5px;
+  /* border-width: 0.5px; */
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 #contact textarea {
   margin: 23px 23px 23px 0px;
@@ -148,18 +150,26 @@ p {
   width: 82%;
   height: 100px;
   margin: auto;
-  border-color: rgb(197, 193, 193);
+  /* border-color: rgb(197, 193, 193); */
   /* border-radius: 3px; */
-  border-width: 0.5px;
+  /* border-width: 0.5px; */
   margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 #contact button {
   width: 220px;
   height: 40px;
-  border-radius: 20px;
-  border-color: rgb(197, 193, 193);
-  background-color: white;
+  /*border-radius: 20px;
+  *//*border-color: rgb(197, 193, 193);
+  */background-color: white;
   cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 #contact button:hover {
   background-color: rgb(201, 201, 201);

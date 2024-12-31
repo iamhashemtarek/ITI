@@ -30,10 +30,10 @@ namespace task_8
             employee.AddEmployee += OnAddEmployee;
             employee.RemoveEmployee += OnRemoveEmployee;
 
-            if(employee.Age < 60)
-                OnAddEmployee(employee, EventArgs.Empty);
-            else
-                OnRemoveEmployee(employee, EventArgs.Empty);
+            //if(employee.Age < 60)
+            //    OnAddEmployee(employee, EventArgs.Empty);
+            //else
+            //    OnRemoveEmployee(employee, EventArgs.Empty);
 
         }
 

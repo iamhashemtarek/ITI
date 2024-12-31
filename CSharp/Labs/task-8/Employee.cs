@@ -25,14 +25,14 @@ namespace task_8
             set
             {
                 this.age = value;
-
-                if (this.age >= 60) 
-                {
-                    RemoveEmployee?.Invoke(this, EventArgs.Empty); //firing add event
-                }else
-                {
-                    AddEmployee?.Invoke(this, EventArgs.Empty);
-                }
+                addEmployee();
+                //if (this.age >= 60) 
+                //{
+                //    RemoveEmployee?.Invoke(this, EventArgs.Empty); //firing add event
+                //}else
+                //{
+                //    AddEmployee?.Invoke(this, EventArgs.Empty);
+                //}
 
             }
         }
@@ -42,6 +42,18 @@ namespace task_8
             this.Id = ++id;  
             this.Name = name;   
             this.Age = age; 
+        }
+
+        public void addEmployee()
+        {
+            if (this.age >= 60)
+            {
+                RemoveEmployee?.Invoke(this, EventArgs.Empty); //firing add event
+            }
+            else
+            {
+                AddEmployee?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         public override string ToString()

@@ -22,7 +22,7 @@ internal class Club
     {
         employee.AddEmployee += OnAddEmployee;
         
-        OnAddEmployee(employee, EventArgs.Empty);
+        //OnAddEmployee(employee, EventArgs.Empty);
     }
 
     public override string ToString()

@@ -23,6 +23,12 @@
             club.Subscribe(emp4);
 
 
+            //emp1.AddEmployee();
+
+
+            //emp1.Age = 61;
+
+
             Console.WriteLine(socialInsurance.ToString());
             Console.WriteLine(club.ToString());
         }

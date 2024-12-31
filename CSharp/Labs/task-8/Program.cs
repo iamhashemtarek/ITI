@@ -22,14 +22,15 @@
             club.Subscribe(emp3);
             club.Subscribe(emp4);
 
+            Console.WriteLine("employess add to socialInsurance: "+socialInsurance.ToString());
+            Console.WriteLine("employess add to club: " + club.ToString());
+            Console.WriteLine("not added yet");
+            Console.WriteLine("----------------");
 
             emp1.addEmployee();
             emp2.addEmployee();
             emp3.addEmployee();
             emp4.addEmployee();
-
-
-            //emp1.Age = 61;
 
 
             Console.WriteLine(socialInsurance.ToString());

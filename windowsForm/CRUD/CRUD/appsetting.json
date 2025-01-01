@@ -1,0 +1,3 @@
+﻿{
+  "constr": "Server=DESKTOP-77H1T1P\\SQLEXPRESS; Database = ITI; Integrated Security=True; TrustServerCertificate=True"
+}

@@ -12,14 +12,18 @@
             #endregion
 
             #region Duration
-            Duration d1 = new Duration(10, 30, 10);
-            Duration d2 = new Duration(7800);
-            Duration d3 = new Duration(7800);
+            //Duration d1 = new Duration(10, 30, 10);
+            //Duration d2 = new Duration(7800);
+            //Duration d3 = new Duration(7800);
 
-            Console.WriteLine($"d1 -> {d1}");
-            Console.WriteLine($"d2 -> {d2}");
-            Console.WriteLine((d3 >= d2));
+            //Console.WriteLine($"d1 -> {d1}");
+            //Console.WriteLine($"d2 -> {d2}");
+            //Console.WriteLine((d3 >= d2));
             #endregion
+
+            Durationn d1 = new Durationn() { Hours = 5, Minutes =5, Seconds = 1 };
+            //d1.Hours = -5;
+            Console.WriteLine((int)100/60);
         }
     }
 }

@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 5000px;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.landing-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+nav {
+    flex-shrink: 0;
+    transform: translatey(-20px);
+    -webkit-transform: translatey(-20px);
+    -moz-transform: translatey(-20px);
+    -ms-transform: translatey(-20px);
+    -o-transform: translatey(-20px);
+    font-weight: 400;
+}
+
+.landing-page-content {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
+}
+.landing-page::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #EBEFFF;
+    z-index: -1;
+}
+.landing-page::after::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 200px;
+    background-color: red;
+    
+}
+.landing-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+    
+}
+.landing-page-content h1 {
+    font-weight: 800;
+    font-size: 60px;
+    
+}
+.about-me .about-img {
+    padding: 0;
+}
+
+.about-me .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.about-me .about-content {
+    padding: 10%;
+}
+.about-me .about-content h2 {
+    font-weight: 700;
+    font-size: 50px;
+} 

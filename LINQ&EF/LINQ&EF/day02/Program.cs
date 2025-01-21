@@ -57,13 +57,13 @@ namespace day02
             //}
 
             //2. Produce a Sequence containing the unique first letter from both product and customer names.
-            var q1 = ProductList.Select(product => product.ProductName[0]).Distinct();
-            var q2 = CustomerList.Select(customer => customer.CompanyName[0]).Distinct();
-            var q3 = q1.Union(q2);
-            foreach (var item in q3) 
-            {
-                Console.WriteLine(item);
-            }
+            //var q1 = ProductList.Select(product => product.ProductName[0]).Distinct();
+            //var q2 = CustomerList.Select(customer => customer.CompanyName[0]).Distinct();
+            //var q3 = q1.Union(q2);
+            //foreach (var item in q3) 
+            //{
+            //    Console.WriteLine(item);
+            //}
 
             //3. Create one sequence that contains the common first letter from both product and customer names.
 
@@ -71,6 +71,17 @@ namespace day02
 
             //5. Create one sequence that contains the last Three Characters in each names of all customers and products, including any duplicates
 
+
+            //test
+            var q1 = CustomerList.SelectMany(c => c.Orders);
+            foreach (var q2 in q1)
+            {
+                Console.WriteLine(q2);
+            }
+
+
+
         }
     }
 }
+ 

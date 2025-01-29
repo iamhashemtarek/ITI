@@ -48,10 +48,10 @@
             // dataGridViewProducts
             // 
             dataGridViewProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProducts.Location = new Point(694, 260);
+            dataGridViewProducts.Location = new Point(392, 260);
             dataGridViewProducts.Name = "dataGridViewProducts";
             dataGridViewProducts.RowHeadersWidth = 51;
-            dataGridViewProducts.Size = new Size(604, 188);
+            dataGridViewProducts.Size = new Size(906, 188);
             dataGridViewProducts.TabIndex = 0;
             // 
             // dataGridViewCategories
@@ -60,7 +60,7 @@
             dataGridViewCategories.Location = new Point(0, 260);
             dataGridViewCategories.Name = "dataGridViewCategories";
             dataGridViewCategories.RowHeadersWidth = 51;
-            dataGridViewCategories.Size = new Size(314, 188);
+            dataGridViewCategories.Size = new Size(390, 188);
             dataGridViewCategories.TabIndex = 1;
             // 
             // txtCategoryName
@@ -97,9 +97,9 @@
             // 
             // btnAddCategory
             // 
-            btnAddCategory.Location = new Point(432, 34);
+            btnAddCategory.Location = new Point(402, 63);
             btnAddCategory.Name = "btnAddCategory";
-            btnAddCategory.Size = new Size(199, 29);
+            btnAddCategory.Size = new Size(125, 86);
             btnAddCategory.TabIndex = 6;
             btnAddCategory.Text = "add category";
             btnAddCategory.UseVisualStyleBackColor = true;
@@ -107,7 +107,7 @@
             // 
             // btnAddProduct
             // 
-            btnAddProduct.Location = new Point(433, 111);
+            btnAddProduct.Location = new Point(402, 210);
             btnAddProduct.Name = "btnAddProduct";
             btnAddProduct.Size = new Size(198, 29);
             btnAddProduct.TabIndex = 7;

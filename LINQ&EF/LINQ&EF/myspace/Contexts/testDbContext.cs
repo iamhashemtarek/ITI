@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using myspace.Configurations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,15 @@ namespace myspace.Contexts
         {
             optionsBuilder.UseSqlServer("Server=DESKTOP-77H1T1P\\SQLEXPRESS;Database=Test;Trusted_Connection=True; TrustServerCertificate=True;");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+          
+            modelBuilder.ApplyConfiguration<Department>(new DepartmentConfigurations());
+
+            base.OnModelCreating(modelBuilder);
+        }
+        public DbSet<Employee> Employees { get; set; }
     }
 }
+    

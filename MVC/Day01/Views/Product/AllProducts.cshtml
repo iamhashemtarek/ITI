@@ -1,0 +1,21 @@
+﻿<table class="table table-bordered table-hover">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Image</th>
+        <th>Details</th>
+    </tr>
+    @foreach (Product item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>@item.Price</td>
+            <td>@item.Category</td>
+            <td><img src="~/Images/box.png" style="width:70px" /></td>
+            <td><a href="http://localhost:5109/Product/Details/@item.Id">details</a></td>
+        </tr>
+    }
+</table>

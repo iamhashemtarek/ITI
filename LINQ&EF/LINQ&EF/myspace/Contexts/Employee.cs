@@ -32,10 +32,8 @@ namespace myspace.Contexts
 
         [DataType(DataType.Password)]
         public string Password { get; set; }
-
-        public override string ToString()
-        {
-            return $"{Id}-{Name}";
-        }
+        [ForeignKey("Department")]
+        public int? DepartmentId {  get; set; }
+        public Department Department { get; set; }
     }
 }

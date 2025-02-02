@@ -1,0 +1,21 @@
+﻿@model Instructor
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div class="card" style="width: 18rem;">
+    <img src="~/Images/@Model.Image" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+    </div>  
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">@Model.Salary</li>
+        <li class="list-group-item">@Model.Address</li>
+        <li class="list-group-item">@Model.Department.Name</li>
+    </ul>
+    <div class="card-body">
+        <a href="/Instructor/All" class="card-link">all instructors</a>
+    </div>
+</div>

@@ -10,13 +10,13 @@ namespace ManagementSystem.Controllers
         {
             List<Instructor> instructors = instructorBL.GetAll();
 
-            return View(instructors);
+            return View("All",instructors);
         }
         public IActionResult Details(int id)
         {
             Instructor instructor = instructorBL.GetById(id);
 
-            return View(instructor);
+            return View("Details",instructor);
         }
     }
 }

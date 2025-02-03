@@ -6,9 +6,9 @@
         public int Degree { get; set; }
 
         public int TraineeId {  get; set; }
-        public Trainee Trainee { get; set; }
+        public virtual Trainee Trainee { get; set; }
 
         public int CourseId { get; set; }
-        public Course Course { get; set; }
+        public virtual Course Course { get; set; }
     }
 }

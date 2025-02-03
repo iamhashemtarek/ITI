@@ -3,6 +3,7 @@ using ManagementSystem.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,16 +11,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ManagementSystem.Migrations
 {
     [DbContext(typeof(ManagementSystemDbContext))]
-    partial class ManagementSystemDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250203074001_HandleOnDelete")]
+    partial class HandleOnDelete
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "9.0.1")
-                .HasAnnotation("Proxies:ChangeTracking", false)
-                .HasAnnotation("Proxies:CheckEquality", false)
-                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -172,7 +172,7 @@ namespace ManagementSystem.Migrations
 
                     b.HasIndex("DeptId");
 
-                    b.ToTable("Trainees");
+                    b.ToTable("Traines");
                 });
 
             modelBuilder.Entity("ManagementSystem.Models.Course", b =>

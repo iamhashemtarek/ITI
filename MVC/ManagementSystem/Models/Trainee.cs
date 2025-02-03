@@ -8,8 +8,8 @@
         public string Grade { get; set; }
         public string Image {  get; set; }
         public int? DeptId { get; set; }
-        public Department Department { get; set; }
+        public virtual Department Department { get; set; }
 
-        public ICollection<CourseResult> CourseResults { get; set; } = new List<CourseResult>();
+        public virtual ICollection<CourseResult> CourseResults { get; set; } = new List<CourseResult>();
     }
 }

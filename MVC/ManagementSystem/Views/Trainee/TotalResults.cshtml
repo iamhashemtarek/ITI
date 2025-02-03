@@ -1,0 +1,24 @@
+﻿@model List<TraineeResult>
+@{
+    ViewData["Title"] = "TotalResults";
+}
+
+<h1>TotalResults for @Model[0].TraineeName</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Course Name</th>
+            <th scope="col">Degree</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr style="background-color: @(item.status == false ? "red" : "white")">
+                <td>@item.CourseName</td>
+                <td>@item.Degree</td>
+            </tr>
+        }
+    </tbody>
+</table>

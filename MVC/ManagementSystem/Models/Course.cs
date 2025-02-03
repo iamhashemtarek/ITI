@@ -8,8 +8,9 @@
         public int MinDegree { get; set; }
         public int Hours {  get; set; }
 
-        public ICollection<CourseResult> CourseResults { get; set; } = new List<CourseResult>();
+        public virtual ICollection<CourseResult> CourseResults { get; set; } = new List<CourseResult>();
+        public virtual ICollection<Instructor> Instructors { get; set; } = new List<Instructor>();
         public int DeptId {  get; set; }    
-        public Department Department { get; set; }
+        public virtual Department Department { get; set; }
     }
 }

@@ -1,0 +1,26 @@
+﻿@model TraineeResult
+@{
+    ViewData["Title"] = "Result";
+}
+
+<h1>Result</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Trainee ID</th>
+            <th scope="col">Trainee Name</th>
+            <th scope="col">Course Name</th>
+            <th scope="col">Degree</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: @(Model.status == false ? "red" : "white")">
+            <td>@Model.TraineeId</td>
+            <td>@Model.TraineeName</td>
+            <td>@Model.CourseName</td>
+            <td>@Model.Degree</td>
+        </tr>
+    </tbody>
+</table>
+

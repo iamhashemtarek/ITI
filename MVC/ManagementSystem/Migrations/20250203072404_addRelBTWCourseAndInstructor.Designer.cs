@@ -3,6 +3,7 @@ using ManagementSystem.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,16 +11,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ManagementSystem.Migrations
 {
     [DbContext(typeof(ManagementSystemDbContext))]
-    partial class ManagementSystemDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250203072404_addRelBTWCourseAndInstructor")]
+    partial class addRelBTWCourseAndInstructor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "9.0.1")
-                .HasAnnotation("Proxies:ChangeTracking", false)
-                .HasAnnotation("Proxies:CheckEquality", false)
-                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -52,7 +52,7 @@ namespace ManagementSystem.Migrations
 
                     b.HasIndex("DeptId");
 
-                    b.ToTable("Courses");
+                    b.ToTable("Course");
                 });
 
             modelBuilder.Entity("ManagementSystem.Models.CourseResult", b =>
@@ -78,7 +78,7 @@ namespace ManagementSystem.Migrations
 
                     b.HasIndex("TraineeId");
 
-                    b.ToTable("CoursesResult");
+                    b.ToTable("CourseResult");
                 });
 
             modelBuilder.Entity("ManagementSystem.Models.Department", b =>
@@ -138,7 +138,7 @@ namespace ManagementSystem.Migrations
 
                     b.HasIndex("DeptId");
 
-                    b.ToTable("Instructors");
+                    b.ToTable("Instructor");
                 });
 
             modelBuilder.Entity("ManagementSystem.Models.Trainee", b =>
@@ -172,7 +172,7 @@ namespace ManagementSystem.Migrations
 
                     b.HasIndex("DeptId");
 
-                    b.ToTable("Trainees");
+                    b.ToTable("Trainee");
                 });
 
             modelBuilder.Entity("ManagementSystem.Models.Course", b =>
@@ -180,7 +180,7 @@ namespace ManagementSystem.Migrations
                     b.HasOne("ManagementSystem.Models.Department", "Department")
                         .WithMany("Courses")
                         .HasForeignKey("DeptId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Department");
@@ -209,8 +209,7 @@ namespace ManagementSystem.Migrations
                 {
                     b.HasOne("ManagementSystem.Models.Instructor", "Manager")
                         .WithMany()
-                        .HasForeignKey("ManagerId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .HasForeignKey("ManagerId");
 
                     b.Navigation("Manager");
                 });
@@ -220,13 +219,12 @@ namespace ManagementSystem.Migrations
                     b.HasOne("ManagementSystem.Models.Course", "Course")
                         .WithMany("Instructors")
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ManagementSystem.Models.Department", "Department")
                         .WithMany("Instructors")
-                        .HasForeignKey("DeptId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .HasForeignKey("DeptId");
 
                     b.Navigation("Course");
 
@@ -237,8 +235,7 @@ namespace ManagementSystem.Migrations
                 {
                     b.HasOne("ManagementSystem.Models.Department", "Department")
                         .WithMany("Trainees")
-                        .HasForeignKey("DeptId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .HasForeignKey("DeptId");
 
                     b.Navigation("Department");
                 });

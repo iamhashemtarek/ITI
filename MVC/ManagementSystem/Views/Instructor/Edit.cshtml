@@ -1,0 +1,42 @@
+﻿@model InstructorWithDeptsAndWithCourses
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<form action="/Instructor/SaveEdit/@Model?.Id" method="post">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="@Model?.Name" >
+    </div>
+    <div class="mb-3">
+        <label for="salary" class="form-label">Salary</label>
+        <input type="number" class="form-control" id="salary" name="salary" value="@Model?.Salary" >
+    </div>
+    <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <input type="text" class="form-control" id="address" name="address" value="@Model?.Address">
+    </div>
+    <div class="mb-3">
+        <label for="department" class="form-label">Department</label>
+        <select class="form-select" id="department" name="department" aria-label="Default select example">
+            @foreach (var dept in Model.Departments)
+            {
+                <option value="@dept.Id">@dept.Name</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="course" class="form-label">Course</label>
+        <select class="form-select" id="course" name="course" aria-label="Default select example">
+            @foreach (var dept in Model.Departments)
+            {
+                <option value="@dept.Id">@dept.Name</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<a href="/Instructor/Index"></a>

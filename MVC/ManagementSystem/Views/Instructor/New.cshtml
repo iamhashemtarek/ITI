@@ -1,0 +1,66 @@
+﻿@model InstructorWithDeptsAndWithCourses
+@{
+    ViewData["Title"] = "New";
+}
+
+<h1>New</h1>
+<form action="/Instructor/SaveNew" method="post">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="@Model?.Name" required>
+    </div>
+    <div class="mb-3">
+        <label for="salary" class="form-label">Salary</label>
+        <input type="number" class="form-control" id="salary" name="salary" value="@Model?.Salary" required>
+    </div>
+    <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <input type="text" class="form-control" id="address" name="address" value="@Model?.Address" required>
+    </div>
+    <div class="mb-3">
+        <label for="department" class="form-label">Department</label>
+        <select class="form-select" id="department" name="DeptId" aria-label="Default select example" required>
+            <option value="">Select Department</option>
+            @foreach (var dept in Model.Departments)
+            {
+                <option value="@dept.Id">@dept.Name</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="course" class="form-label">Course</label>
+        <select class="form-select" id="course" name="CourseId" required>
+            <option value="">Select Course</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<a href="/Instructor/Index">back to list</a>
+
+<script>
+    var allCourses = [
+    @foreach (var course in Model.Courses)
+    {
+        @: { id: @course.Id, name: "@course.Name", deptId: @course.DeptId },
+    }
+    ];
+
+    document.getElementById("department").addEventListener("change", function () {
+        var selectedDept = this.value;
+        var courseDropdown = document.getElementById("course");
+
+        courseDropdown.innerHTML = '<option value="">Select Course</option>';
+
+        allCourses.forEach(course => {
+            if (course.deptId == selectedDept) {
+                var option = document.createElement("option");
+                option.value = course.id;
+                option.textContent = course.name;
+                courseDropdown.appendChild(option);
+            }
+        });
+
+        courseDropdown.disabled = selectedDept === "";
+    });
+</script>

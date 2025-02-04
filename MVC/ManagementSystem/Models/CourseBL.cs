@@ -11,6 +11,7 @@ namespace ManagementSystem.Models
             DBContext = new ManagementSystemDbContext();
         }
 
+        public List<Course> GetAll() => DBContext.Courses.ToList(); 
         public List<ResultsPerCourse> GetAllResults(int courseId)
         {
             List<ResultsPerCourse> resultsPerCourse = new List<ResultsPerCourse>();

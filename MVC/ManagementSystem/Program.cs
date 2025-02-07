@@ -22,7 +22,7 @@ namespace ManagementSystem
             {
                 app.UseExceptionHandler("/Home/Error");
             }  
-            app.UseStaticFiles();
+            app.UseStaticFiles(); // to req all statics eg. bootstrap, css, ....
                 
             app.UseRouting();
             

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MaterialSkin.Controls;
+using Microsoft.EntityFrameworkCore;
 using QuizManagementSystem.Models;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace QuizManagementSystem.Forms
 {
-    public partial class QuizTakingForm : Form
+    public partial class QuizTakingForm : MaterialForm
     {
         private int _studentId;
         private int _quizId;
@@ -24,6 +25,8 @@ namespace QuizManagementSystem.Forms
         public QuizTakingForm(int studentId, int quizId)
         {
             InitializeComponent();
+            GlobalStyle.Apply(this);
+
             _studentId = studentId;
             _quizId = quizId;
             LoadQuiz();

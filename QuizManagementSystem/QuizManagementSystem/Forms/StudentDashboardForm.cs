@@ -9,17 +9,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
+using MaterialSkin.Controls;
 
 
 namespace QuizManagementSystem.Forms
 {
-    public partial class StudentDashboardForm : Form
+    public partial class StudentDashboardForm : MaterialForm
     {
         private int _studentId;
 
         public StudentDashboardForm(int studentId)
         {
             InitializeComponent();
+            GlobalStyle.Apply(this);
+
             _studentId = studentId;
             LoadQuizzes();
 

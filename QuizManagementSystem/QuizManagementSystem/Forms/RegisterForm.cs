@@ -1,4 +1,5 @@
-﻿using QuizManagementSystem.Models;
+﻿using MaterialSkin.Controls;
+using QuizManagementSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,11 +12,13 @@ using System.Windows.Forms;
 
 namespace QuizManagementSystem.Forms
 {
-    public partial class RegisterForm : Form
+    public partial class RegisterForm : MaterialForm
     {
         public RegisterForm()
         {
             InitializeComponent();
+            GlobalStyle.Apply(this);
+
         }
 
         private void btnRegister_Click(object sender, EventArgs e)

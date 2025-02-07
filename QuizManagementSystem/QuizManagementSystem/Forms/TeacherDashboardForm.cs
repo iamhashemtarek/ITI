@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MaterialSkin.Controls;
+using Microsoft.EntityFrameworkCore;
 using QuizManagementSystem.Models;
 using System;
 using System.Collections.Generic;
@@ -13,13 +14,15 @@ using System.Windows.Forms;
 
 namespace QuizManagementSystem.Forms
 {
-    public partial class TeacherDashboardForm : Form
+    public partial class TeacherDashboardForm : MaterialForm
     {
         private int _teacherId;
 
         public TeacherDashboardForm(int teacherId)
         {
             InitializeComponent();
+            GlobalStyle.Apply(this);
+
             _teacherId = teacherId;
 
         }

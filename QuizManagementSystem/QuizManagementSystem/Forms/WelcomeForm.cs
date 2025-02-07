@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,13 @@ using System.Windows.Forms;
 
 namespace QuizManagementSystem.Forms
 {
-    public partial class WelcomeForm : Form
+    public partial class WelcomeForm : MaterialForm
     {
         public WelcomeForm()
         {
             InitializeComponent();
+            GlobalStyle.Apply(this);
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

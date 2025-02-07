@@ -1,4 +1,6 @@
-﻿using QuizManagementSystem.Models;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using QuizManagementSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,11 +13,15 @@ using System.Windows.Forms;
 
 namespace QuizManagementSystem.Forms
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : MaterialForm
     {
+        private readonly MaterialSkinManager _materialSkinManager;
+
         public LoginForm()
         {
             InitializeComponent();
+            GlobalStyle.Apply(this);
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -58,6 +64,23 @@ namespace QuizManagementSystem.Forms
             var welcomeForm = new WelcomeForm();
             welcomeForm.Show();
             this.Hide();
+        }
+
+        private void materialTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

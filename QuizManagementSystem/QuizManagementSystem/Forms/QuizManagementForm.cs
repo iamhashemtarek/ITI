@@ -1,4 +1,5 @@
-﻿using QuizManagementSystem.Models;
+﻿using MaterialSkin.Controls;
+using QuizManagementSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,13 +12,15 @@ using System.Windows.Forms;
 
 namespace QuizManagementSystem.Forms
 {
-    public partial class QuizManagementForm : Form
+    public partial class QuizManagementForm : MaterialForm
     {
         private int _teacherId;
         private List<Question> _questions = new List<Question>();
         public QuizManagementForm(int teacherId)
         {
             InitializeComponent();
+            GlobalStyle.Apply(this);
+
             _teacherId = teacherId;
 
         }
@@ -38,7 +41,7 @@ namespace QuizManagementSystem.Forms
 
         private void btnSaveQuiz_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtQuizTitle.Text))
+            if (string.IsNullOrWhiteSpace(txtQuizTitle1.Text))
             {
                 MessageBox.Show("Please enter a quiz title.");
                 return;
@@ -54,7 +57,7 @@ namespace QuizManagementSystem.Forms
             {
                 var quiz = new Quiz
                 {
-                    Title = txtQuizTitle.Text,
+                    Title = txtQuizTitle1.Text,
                     TeacherId = _teacherId,
                     Questions = _questions
                 };
@@ -68,6 +71,11 @@ namespace QuizManagementSystem.Forms
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+
+        }
+
+        private void materialTextBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

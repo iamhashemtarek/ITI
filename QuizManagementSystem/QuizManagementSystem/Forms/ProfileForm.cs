@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using MaterialSkin.Controls;
+using Microsoft.VisualBasic.ApplicationServices;
 using QuizManagementSystem.Models;
 using System;
 using System.Collections.Generic;
@@ -12,13 +13,14 @@ using System.Windows.Forms;
 
 namespace QuizManagementSystem.Forms
 {
-    public partial class ProfileForm : Form
+    public partial class ProfileForm : MaterialForm
     {
         private int _userId;
 
         public ProfileForm(int userId)
         {
             InitializeComponent();
+            GlobalStyle.Apply(this);
             _userId = userId;
             LoadProfile();
         }

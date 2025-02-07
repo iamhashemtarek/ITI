@@ -28,60 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnLogin = new Button();
-            btnRegister = new Button();
-            label1 = new Label();
+            btnLogin = new MaterialSkin.Controls.MaterialButton();
+            btnRegister = new MaterialSkin.Controls.MaterialButton();
             SuspendLayout();
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(291, 110);
+            btnLogin.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnLogin.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnLogin.Depth = 0;
+            btnLogin.HighEmphasis = true;
+            btnLogin.Icon = null;
+            btnLogin.Location = new Point(193, 126);
+            btnLogin.Margin = new Padding(4, 6, 4, 6);
+            btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(165, 82);
-            btnLogin.TabIndex = 0;
+            btnLogin.NoAccentTextColor = Color.Empty;
+            btnLogin.Size = new Size(64, 36);
+            btnLogin.TabIndex = 2;
             btnLogin.Text = "Login";
+            btnLogin.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnLogin.UseAccentColor = false;
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
             // 
             // btnRegister
             // 
-            btnRegister.Location = new Point(291, 225);
+            btnRegister.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnRegister.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnRegister.Depth = 0;
+            btnRegister.HighEmphasis = true;
+            btnRegister.Icon = null;
+            btnRegister.Location = new Point(59, 126);
+            btnRegister.Margin = new Padding(4, 6, 4, 6);
+            btnRegister.MouseState = MaterialSkin.MouseState.HOVER;
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(165, 82);
-            btnRegister.TabIndex = 1;
+            btnRegister.NoAccentTextColor = Color.Empty;
+            btnRegister.Size = new Size(89, 36);
+            btnRegister.TabIndex = 3;
             btnRegister.Text = "Register";
+            btnRegister.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnRegister.UseAccentColor = false;
             btnRegister.UseVisualStyleBackColor = true;
             btnRegister.Click += btnRegister_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(291, 28);
-            label1.Name = "label1";
-            label1.Size = new Size(174, 50);
-            label1.TabIndex = 2;
-            label1.Text = "Welcome";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // WelcomeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label1);
+            ClientSize = new Size(332, 232);
             Controls.Add(btnRegister);
             Controls.Add(btnLogin);
             Name = "WelcomeForm";
-            Text = "WelcomeForm";
+            Text = "Welcome";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button btnLogin;
-        private Button btnRegister;
-        private Label label1;
+        private MaterialSkin.Controls.MaterialButton btnLogin;
+        private MaterialSkin.Controls.MaterialButton btnRegister;
     }
 }

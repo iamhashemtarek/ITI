@@ -1,4 +1,5 @@
-﻿using QuizManagementSystem.Models;
+﻿using MaterialSkin.Controls;
+using QuizManagementSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,13 +12,15 @@ using System.Windows.Forms;
 
 namespace QuizManagementSystem.Forms
 {
-    public partial class ResultsForm : Form
+    public partial class ResultsForm : MaterialForm
     {
         private List<Result> _results;
 
         public ResultsForm(List<Result> results)
         {
             InitializeComponent();
+            GlobalStyle.Apply(this);
+
             _results = results;
             LoadResults();
         }

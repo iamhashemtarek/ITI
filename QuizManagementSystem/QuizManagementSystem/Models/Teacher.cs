@@ -8,6 +8,6 @@ namespace QuizManagementSystem.Models
 {
     public class Teacher : User
     {
-        public ICollection<Quiz> Quizzes { get; set; } = new List<Quiz>();
+        public virtual ICollection<Quiz> Quizzes { get; set; } = new List<Quiz>();
     }
 }

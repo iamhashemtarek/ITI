@@ -28,82 +28,152 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnTakeQuiz = new Button();
-            btnViewResults = new Button();
-            btnLogout = new Button();
-            btnBack = new Button();
-            cmbQuizzes = new ComboBox();
+            btnTakeQuiz1 = new MaterialSkin.Controls.MaterialButton();
+            btnViewResults1 = new MaterialSkin.Controls.MaterialButton();
+            btnLogout1 = new MaterialSkin.Controls.MaterialButton();
+            btnBack1 = new MaterialSkin.Controls.MaterialButton();
+            cmbQuizzes1 = new MaterialSkin.Controls.MaterialComboBox();
+            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             SuspendLayout();
             // 
-            // btnTakeQuiz
+            // btnTakeQuiz1
             // 
-            btnTakeQuiz.Location = new Point(112, 84);
-            btnTakeQuiz.Name = "btnTakeQuiz";
-            btnTakeQuiz.Size = new Size(94, 29);
-            btnTakeQuiz.TabIndex = 0;
-            btnTakeQuiz.Text = "take quiz";
-            btnTakeQuiz.UseVisualStyleBackColor = true;
-            btnTakeQuiz.Click += btnTakeQuiz_Click;
+            btnTakeQuiz1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnTakeQuiz1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnTakeQuiz1.Depth = 0;
+            btnTakeQuiz1.HighEmphasis = true;
+            btnTakeQuiz1.Icon = null;
+            btnTakeQuiz1.Location = new Point(35, 212);
+            btnTakeQuiz1.Margin = new Padding(4, 6, 4, 6);
+            btnTakeQuiz1.MouseState = MaterialSkin.MouseState.HOVER;
+            btnTakeQuiz1.Name = "btnTakeQuiz1";
+            btnTakeQuiz1.NoAccentTextColor = Color.Empty;
+            btnTakeQuiz1.Size = new Size(94, 36);
+            btnTakeQuiz1.TabIndex = 5;
+            btnTakeQuiz1.Text = "Take Quiz";
+            btnTakeQuiz1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnTakeQuiz1.UseAccentColor = false;
+            btnTakeQuiz1.UseVisualStyleBackColor = true;
+            btnTakeQuiz1.Click += btnTakeQuiz_Click;
             // 
-            // btnViewResults
+            // btnViewResults1
             // 
-            btnViewResults.Location = new Point(299, 95);
-            btnViewResults.Name = "btnViewResults";
-            btnViewResults.Size = new Size(94, 29);
-            btnViewResults.TabIndex = 1;
-            btnViewResults.Text = "view results";
-            btnViewResults.UseVisualStyleBackColor = true;
-            btnViewResults.Click += btnViewResults_Click;
+            btnViewResults1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnViewResults1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnViewResults1.Depth = 0;
+            btnViewResults1.HighEmphasis = true;
+            btnViewResults1.Icon = null;
+            btnViewResults1.Location = new Point(252, 103);
+            btnViewResults1.Margin = new Padding(4, 6, 4, 6);
+            btnViewResults1.MouseState = MaterialSkin.MouseState.HOVER;
+            btnViewResults1.Name = "btnViewResults1";
+            btnViewResults1.NoAccentTextColor = Color.Empty;
+            btnViewResults1.Size = new Size(122, 36);
+            btnViewResults1.TabIndex = 6;
+            btnViewResults1.Text = "View Results";
+            btnViewResults1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnViewResults1.UseAccentColor = false;
+            btnViewResults1.UseVisualStyleBackColor = true;
+            btnViewResults1.Click += btnViewResults_Click;
             // 
-            // btnLogout
+            // btnLogout1
             // 
-            btnLogout.Location = new Point(512, 84);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(94, 29);
-            btnLogout.TabIndex = 2;
-            btnLogout.Text = "logout";
-            btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.Click += btnLogout_Click;
+            btnLogout1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnLogout1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnLogout1.Depth = 0;
+            btnLogout1.HighEmphasis = true;
+            btnLogout1.Icon = null;
+            btnLogout1.Location = new Point(296, 157);
+            btnLogout1.Margin = new Padding(4, 6, 4, 6);
+            btnLogout1.MouseState = MaterialSkin.MouseState.HOVER;
+            btnLogout1.Name = "btnLogout1";
+            btnLogout1.NoAccentTextColor = Color.Empty;
+            btnLogout1.Size = new Size(78, 36);
+            btnLogout1.TabIndex = 7;
+            btnLogout1.Text = "Logout";
+            btnLogout1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnLogout1.UseAccentColor = false;
+            btnLogout1.UseVisualStyleBackColor = true;
+            btnLogout1.Click += btnLogout_Click;
             // 
-            // btnBack
+            // btnBack1
             // 
-            btnBack.Location = new Point(454, 290);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(94, 29);
-            btnBack.TabIndex = 3;
-            btnBack.Text = "back";
-            btnBack.UseVisualStyleBackColor = true;
-            btnBack.Click += btnBack_Click;
+            btnBack1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnBack1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnBack1.Depth = 0;
+            btnBack1.HighEmphasis = true;
+            btnBack1.Icon = null;
+            btnBack1.Location = new Point(310, 205);
+            btnBack1.Margin = new Padding(4, 6, 4, 6);
+            btnBack1.MouseState = MaterialSkin.MouseState.HOVER;
+            btnBack1.Name = "btnBack1";
+            btnBack1.NoAccentTextColor = Color.Empty;
+            btnBack1.Size = new Size(64, 36);
+            btnBack1.TabIndex = 8;
+            btnBack1.Text = "Back";
+            btnBack1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnBack1.UseAccentColor = false;
+            btnBack1.UseVisualStyleBackColor = true;
+            btnBack1.Click += btnBack_Click;
             // 
-            // cmbQuizzes
+            // cmbQuizzes1
             // 
-            cmbQuizzes.FormattingEnabled = true;
-            cmbQuizzes.Location = new Point(172, 201);
-            cmbQuizzes.Name = "cmbQuizzes";
-            cmbQuizzes.Size = new Size(151, 28);
-            cmbQuizzes.TabIndex = 4;
+            cmbQuizzes1.AutoResize = false;
+            cmbQuizzes1.BackColor = Color.FromArgb(255, 255, 255);
+            cmbQuizzes1.Depth = 0;
+            cmbQuizzes1.DrawMode = DrawMode.OwnerDrawVariable;
+            cmbQuizzes1.DropDownHeight = 174;
+            cmbQuizzes1.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbQuizzes1.DropDownWidth = 121;
+            cmbQuizzes1.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cmbQuizzes1.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cmbQuizzes1.FormattingEnabled = true;
+            cmbQuizzes1.IntegralHeight = false;
+            cmbQuizzes1.ItemHeight = 43;
+            cmbQuizzes1.Location = new Point(35, 144);
+            cmbQuizzes1.MaxDropDownItems = 4;
+            cmbQuizzes1.MouseState = MaterialSkin.MouseState.OUT;
+            cmbQuizzes1.Name = "cmbQuizzes1";
+            cmbQuizzes1.Size = new Size(151, 49);
+            cmbQuizzes1.StartIndex = 0;
+            cmbQuizzes1.TabIndex = 9;
+            cmbQuizzes1.SelectedIndexChanged += cmbQuizzes1_SelectedIndexChanged;
+            // 
+            // materialLabel1
+            // 
+            materialLabel1.AutoSize = true;
+            materialLabel1.Depth = 0;
+            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel1.Location = new Point(35, 103);
+            materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel1.Name = "materialLabel1";
+            materialLabel1.Size = new Size(90, 19);
+            materialLabel1.TabIndex = 10;
+            materialLabel1.Text = "Choose Quiz";
             // 
             // StudentDashboardForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(cmbQuizzes);
-            Controls.Add(btnBack);
-            Controls.Add(btnLogout);
-            Controls.Add(btnViewResults);
-            Controls.Add(btnTakeQuiz);
+            ClientSize = new Size(427, 298);
+            Controls.Add(materialLabel1);
+            Controls.Add(cmbQuizzes1);
+            Controls.Add(btnBack1);
+            Controls.Add(btnLogout1);
+            Controls.Add(btnViewResults1);
+            Controls.Add(btnTakeQuiz1);
             Name = "StudentDashboardForm";
-            Text = "StudentDashboardForm";
+            Text = "Student Dashboard";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Button btnTakeQuiz;
-        private Button btnViewResults;
-        private Button btnLogout;
-        private Button btnBack;
-        private ComboBox cmbQuizzes;
+        private MaterialSkin.Controls.MaterialButton btnTakeQuiz1;
+        private MaterialSkin.Controls.MaterialButton btnViewResults1;
+        private MaterialSkin.Controls.MaterialButton btnLogout1;
+        private MaterialSkin.Controls.MaterialButton btnBack1;
+        private MaterialSkin.Controls.MaterialComboBox cmbQuizzes1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }

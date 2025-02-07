@@ -16,8 +16,8 @@ namespace QuizManagementSystem.Models
         public string Title { get; set; }
 
         public int TeacherId { get; set; }
-        public Teacher Teacher { get; set; }
+        public virtual Teacher Teacher { get; set; }
 
-        public ICollection<Question> Questions { get; set; } = new List<Question>();
+        public virtual ICollection<Question> Questions { get; set; } = new List<Question>();
     }
 }

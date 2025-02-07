@@ -172,7 +172,7 @@
             btnSave1.MouseState = MaterialSkin.MouseState.HOVER;
             btnSave1.Name = "btnSave1";
             btnSave1.NoAccentTextColor = Color.Empty;
-            btnSave1.Size = new Size(114, 36);
+            btnSave1.Size = new Size(64, 36);
             btnSave1.TabIndex = 17;
             btnSave1.Text = "Save";
             btnSave1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -196,7 +196,7 @@
             Controls.Add(label1);
             Controls.Add(lstAnswers);
             Name = "QuestionForm";
-            Text = "QuestionForm";
+            Text = "Question Form";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -40,6 +40,12 @@ namespace QuizManagementSystem.Forms
             {
                 var results = context.Results
                     .Where(r => r.Quiz.TeacherId == _teacherId)
+                    .Select(r => new ResultDto
+                    {
+                        QuizTitle = r.Quiz.Title,
+                        StudentName = r.Student.FullName,
+                        Score= r.Score
+                    })
                     .ToList();
 
 
@@ -49,15 +55,10 @@ namespace QuizManagementSystem.Forms
                     return;
                 }
 
-                foreach (var result in results)
-                {
-                    context.Entry(result).Reference(r => r.Quiz).Load();  
-                    context.Entry(result).Reference(r => r.Student).Load(); 
-                }
+            
 
 
-                var resultsForm = new ResultsForm(results);
-                resultsForm.Show();
+                new ResultsForm(results).Show();
             }
         }
 

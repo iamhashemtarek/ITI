@@ -35,22 +35,22 @@ namespace QuizManagementSystem.Forms
                     .Select(q => new { q.Id, q.Title })
                     .ToList();
 
-                cmbQuizzes.DataSource = quizzes;
-                cmbQuizzes.DisplayMember = "Title";
-                cmbQuizzes.ValueMember = "Id";
+                cmbQuizzes1.DataSource = quizzes;
+                cmbQuizzes1.DisplayMember = "Title";
+                cmbQuizzes1.ValueMember = "Id";
             }
         }
 
 
         private void btnTakeQuiz_Click(object sender, EventArgs e)
         {
-            if (cmbQuizzes.SelectedValue == null)
+            if (cmbQuizzes1.SelectedValue == null)
             {
                 MessageBox.Show("Please select a quiz.");
                 return;
             }
 
-            int quizId = (int)cmbQuizzes.SelectedValue;
+            int quizId = (int)cmbQuizzes1.SelectedValue;
             var quizForm = new QuizTakingForm(_studentId, quizId);
             quizForm.Show();
             this.Hide();
@@ -61,10 +61,15 @@ namespace QuizManagementSystem.Forms
             using (var context = new QuizContext())
             {
                 var results = context.Results
-                    .Where(r => r.StudentId == _studentId)
+                    .Where(r => r.StudentId == (int)this._studentId)
+                    .Select(r => new ResultDto
+                    {
+                        QuizTitle = r.Quiz.Title,
+                        StudentName = context.Users.Where(s => s.Id == _studentId).Select(u => u.FullName).FirstOrDefault(),
+                        Score = r.Score,
+                    })
                     .ToList();
 
-                
                 if (results.Count == 0)
                 {
                     MessageBox.Show("No results found.");
@@ -72,14 +77,13 @@ namespace QuizManagementSystem.Forms
                 }
 
 
-                foreach (var result in results)
-                {
-                    context.Entry(result).Reference(r => r.Quiz).Load();
-                    context.Entry(result).Reference(r => r.Student).Load();
-                }
+                //foreach (var result in results)
+                //{
+                //    context.Entry(result).Reference(r => r.Quiz).Load();
+                //    context.Entry(result).Reference(r => r.Student).Load();
+                //}
 
-                var resultsForm = new ResultsForm(results);
-                resultsForm.Show();
+                new ResultForm(results).Show();
             }
         }
 
@@ -95,6 +99,11 @@ namespace QuizManagementSystem.Forms
             var welcomeForm = new WelcomeForm();
             welcomeForm.Show();
             this.Hide();
+        }
+
+        private void cmbQuizzes1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

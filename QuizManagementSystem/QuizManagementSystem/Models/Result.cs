@@ -11,10 +11,10 @@ namespace QuizManagementSystem.Models
         public int Id { get; set; }
 
         public int StudentId { get; set; }
-        public Student Student { get; set; }
+        public virtual Student Student { get; set; }
 
         public int QuizId { get; set; }
-        public Quiz Quiz { get; set; }
+        public virtual Quiz Quiz { get; set; }
 
         public int Score { get; set; }
     }

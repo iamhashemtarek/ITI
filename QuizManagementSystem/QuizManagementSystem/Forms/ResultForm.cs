@@ -12,28 +12,24 @@ using System.Windows.Forms;
 
 namespace QuizManagementSystem.Forms
 {
-    public partial class ResultsForm : MaterialForm
+    public partial class ResultForm : MaterialForm
     {
         private List<ResultDto> _results;
 
-        public ResultsForm(List<ResultDto> results)
+        public ResultForm(List<ResultDto> results)
         {
             InitializeComponent();
-            GlobalStyle.Apply(this);
-
             _results = results;
             LoadResults();
         }
-
         private void LoadResults()
         {
             dataGridView1.DataSource = _results;
         }
-    
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.Close();
+
         }
     }
 }

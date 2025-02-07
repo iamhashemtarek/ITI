@@ -19,7 +19,7 @@ namespace QuizManagementSystem.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=HASHEM\\SQLEXPRESS;Database=QuizManagementSystem;Trusted_Connection=True; TrustServerCertificate=True;");
+            optionsBuilder.UseLazyLoadingProxies().UseSqlServer("Server=HASHEM\\SQLEXPRESS;Database=QuizManagementSystem;Trusted_Connection=True; TrustServerCertificate=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -16,8 +16,8 @@ namespace QuizManagementSystem.Models
         public string Text { get; set; }
 
         public int QuizId { get; set; }
-        public Quiz Quiz { get; set; }
+        public virtual Quiz Quiz { get; set; }
 
-        public ICollection<Answer> Answers { get; set; } = new List<Answer>();
+        public virtual ICollection<Answer> Answers { get; set; } = new List<Answer>();
     }
 }

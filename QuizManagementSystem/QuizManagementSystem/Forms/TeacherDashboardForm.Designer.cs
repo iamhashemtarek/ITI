@@ -28,58 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnCreateQuiz = new Button();
-            btnViewResults = new Button();
-            btnLogout = new Button();
+            btnCreateQuiz = new MaterialSkin.Controls.MaterialButton();
+            btnLogout = new MaterialSkin.Controls.MaterialButton();
+            btnView = new MaterialSkin.Controls.MaterialButton();
             SuspendLayout();
             // 
             // btnCreateQuiz
             // 
-            btnCreateQuiz.Location = new Point(78, 71);
+            btnCreateQuiz.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnCreateQuiz.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnCreateQuiz.Depth = 0;
+            btnCreateQuiz.HighEmphasis = true;
+            btnCreateQuiz.Icon = null;
+            btnCreateQuiz.Location = new Point(106, 129);
+            btnCreateQuiz.Margin = new Padding(4, 6, 4, 6);
+            btnCreateQuiz.MouseState = MaterialSkin.MouseState.HOVER;
             btnCreateQuiz.Name = "btnCreateQuiz";
-            btnCreateQuiz.Size = new Size(94, 29);
-            btnCreateQuiz.TabIndex = 0;
-            btnCreateQuiz.Text = "create quiz";
+            btnCreateQuiz.NoAccentTextColor = Color.Empty;
+            btnCreateQuiz.Size = new Size(161, 36);
+            btnCreateQuiz.TabIndex = 3;
+            btnCreateQuiz.Text = "Create a new quiz";
+            btnCreateQuiz.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnCreateQuiz.UseAccentColor = false;
             btnCreateQuiz.UseVisualStyleBackColor = true;
             btnCreateQuiz.Click += btnCreateQuiz_Click;
             // 
-            // btnViewResults
-            // 
-            btnViewResults.Location = new Point(298, 71);
-            btnViewResults.Name = "btnViewResults";
-            btnViewResults.Size = new Size(94, 29);
-            btnViewResults.TabIndex = 1;
-            btnViewResults.Text = "view results";
-            btnViewResults.UseVisualStyleBackColor = true;
-            btnViewResults.Click += btnViewResults_Click;
-            // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(546, 71);
+            btnLogout.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnLogout.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnLogout.Depth = 0;
+            btnLogout.HighEmphasis = true;
+            btnLogout.Icon = null;
+            btnLogout.Location = new Point(148, 316);
+            btnLogout.Margin = new Padding(4, 6, 4, 6);
+            btnLogout.MouseState = MaterialSkin.MouseState.HOVER;
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(94, 29);
-            btnLogout.TabIndex = 2;
-            btnLogout.Text = "logout";
+            btnLogout.NoAccentTextColor = Color.Empty;
+            btnLogout.Size = new Size(78, 36);
+            btnLogout.TabIndex = 5;
+            btnLogout.Text = "Logout";
+            btnLogout.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnLogout.UseAccentColor = false;
             btnLogout.UseVisualStyleBackColor = true;
             btnLogout.Click += btnLogout_Click;
+            // 
+            // btnView
+            // 
+            btnView.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnView.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnView.Depth = 0;
+            btnView.HighEmphasis = true;
+            btnView.Icon = null;
+            btnView.Location = new Point(109, 226);
+            btnView.Margin = new Padding(4, 6, 4, 6);
+            btnView.MouseState = MaterialSkin.MouseState.HOVER;
+            btnView.Name = "btnView";
+            btnView.NoAccentTextColor = Color.Empty;
+            btnView.Size = new Size(158, 36);
+            btnView.TabIndex = 6;
+            btnView.Text = "View Quiz Results";
+            btnView.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnView.UseAccentColor = false;
+            btnView.UseVisualStyleBackColor = true;
+            btnView.Click += btnViewResults_Click;
             // 
             // TeacherDashboardForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(359, 403);
+            Controls.Add(btnView);
             Controls.Add(btnLogout);
-            Controls.Add(btnViewResults);
             Controls.Add(btnCreateQuiz);
             Name = "TeacherDashboardForm";
-            Text = "TeacherDashboardForm";
+            Text = "Teacher Dashboard";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button btnCreateQuiz;
-        private Button btnViewResults;
-        private Button btnLogout;
+
+        private MaterialSkin.Controls.MaterialButton btnCreateQuiz;
+        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialButton btnLogout;
+        private MaterialSkin.Controls.MaterialButton btnView;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace QuizManagementSystem.Forms
 {
-    partial class ResultsForm
+    partial class ResultForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnBack = new Button();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // btnBack
-            // 
-            btnBack.Location = new Point(21, 95);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(94, 29);
-            btnBack.TabIndex = 1;
-            btnBack.Text = "back";
-            btnBack.UseVisualStyleBackColor = true;
-            btnBack.Click += btnBack_Click;
-            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(34, 231);
+            dataGridView1.Location = new Point(216, 203);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(300, 188);
-            dataGridView1.TabIndex = 2;
+            dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // ResultsForm
+            // ResultForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(425, 444);
+            ClientSize = new Size(800, 450);
             Controls.Add(dataGridView1);
-            Controls.Add(btnBack);
-            Name = "ResultsForm";
-            Text = "Results";
+            Name = "ResultForm";
+            Text = "ResultForm";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button btnBack;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private DataGridView dataGridView1;
     }
 }

@@ -28,83 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnBack = new Button();
             lblQuestion = new Label();
-            btnNext = new Button();
-            btnSubmit = new Button();
             pnlAnswers = new Panel();
+            btnNext = new MaterialSkin.Controls.MaterialButton();
+            btnSubmit = new MaterialSkin.Controls.MaterialButton();
+            btnExit = new MaterialSkin.Controls.MaterialButton();
             SuspendLayout();
-            // 
-            // btnBack
-            // 
-            btnBack.Location = new Point(551, 46);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(94, 29);
-            btnBack.TabIndex = 0;
-            btnBack.Text = "back";
-            btnBack.UseVisualStyleBackColor = true;
-            btnBack.Click += btnBack_Click;
             // 
             // lblQuestion
             // 
             lblQuestion.AutoSize = true;
-            lblQuestion.Location = new Point(150, 69);
+            lblQuestion.Location = new Point(22, 84);
             lblQuestion.Name = "lblQuestion";
             lblQuestion.Size = new Size(66, 20);
             lblQuestion.TabIndex = 1;
             lblQuestion.Text = "question";
             lblQuestion.Click += lblQuestion_Click;
             // 
+            // pnlAnswers
+            // 
+            pnlAnswers.Location = new Point(6, 121);
+            pnlAnswers.Name = "pnlAnswers";
+            pnlAnswers.Size = new Size(519, 168);
+            pnlAnswers.TabIndex = 5;
+            pnlAnswers.Paint += panel1_Paint;
+            // 
             // btnNext
             // 
-            btnNext.Location = new Point(473, 409);
+            btnNext.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnNext.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnNext.Depth = 0;
+            btnNext.HighEmphasis = true;
+            btnNext.Icon = null;
+            btnNext.Location = new Point(24, 318);
+            btnNext.Margin = new Padding(4, 6, 4, 6);
+            btnNext.MouseState = MaterialSkin.MouseState.HOVER;
             btnNext.Name = "btnNext";
-            btnNext.Size = new Size(94, 29);
-            btnNext.TabIndex = 3;
-            btnNext.Text = "next";
+            btnNext.NoAccentTextColor = Color.Empty;
+            btnNext.Size = new Size(64, 36);
+            btnNext.TabIndex = 0;
+            btnNext.Text = "Next";
+            btnNext.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnNext.UseAccentColor = false;
             btnNext.UseVisualStyleBackColor = true;
             btnNext.Click += btnNext_Click;
             // 
             // btnSubmit
             // 
-            btnSubmit.Location = new Point(161, 409);
+            btnSubmit.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnSubmit.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnSubmit.Depth = 0;
+            btnSubmit.HighEmphasis = true;
+            btnSubmit.Icon = null;
+            btnSubmit.Location = new Point(110, 318);
+            btnSubmit.Margin = new Padding(4, 6, 4, 6);
+            btnSubmit.MouseState = MaterialSkin.MouseState.HOVER;
             btnSubmit.Name = "btnSubmit";
-            btnSubmit.Size = new Size(94, 29);
-            btnSubmit.TabIndex = 4;
-            btnSubmit.Text = "submit";
+            btnSubmit.NoAccentTextColor = Color.Empty;
+            btnSubmit.Size = new Size(75, 36);
+            btnSubmit.TabIndex = 1;
+            btnSubmit.Text = "Submit";
+            btnSubmit.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnSubmit.UseAccentColor = false;
             btnSubmit.UseVisualStyleBackColor = true;
             btnSubmit.Click += btnSubmit_Click;
             // 
-            // pnlAnswers
+            // btnExit
             // 
-            pnlAnswers.Location = new Point(130, 151);
-            pnlAnswers.Name = "pnlAnswers";
-            pnlAnswers.Size = new Size(499, 236);
-            pnlAnswers.TabIndex = 5;
-            pnlAnswers.Paint += panel1_Paint;
+            btnExit.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnExit.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnExit.Depth = 0;
+            btnExit.HighEmphasis = true;
+            btnExit.Icon = null;
+            btnExit.Location = new Point(211, 318);
+            btnExit.Margin = new Padding(4, 6, 4, 6);
+            btnExit.MouseState = MaterialSkin.MouseState.HOVER;
+            btnExit.Name = "btnExit";
+            btnExit.NoAccentTextColor = Color.Empty;
+            btnExit.Size = new Size(158, 36);
+            btnExit.TabIndex = 0;
+            btnExit.Text = "Exit";
+            btnExit.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnExit.UseAccentColor = false;
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnBack_Click;
             // 
             // QuizTakingForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(545, 369);
+            Controls.Add(btnExit);
             Controls.Add(pnlAnswers);
             Controls.Add(btnSubmit);
             Controls.Add(btnNext);
             Controls.Add(lblQuestion);
-            Controls.Add(btnBack);
             Name = "QuizTakingForm";
-            Text = "QuizTakingForm";
+            Text = "Quiz";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button btnBack;
+        private Button back1;
         private Label lblQuestion;
-        private Button btnNext;
-        private Button btnSubmit;
         private Panel pnlAnswers;
+        private MaterialSkin.Controls.MaterialButton btnSubmit;
+        private MaterialSkin.Controls.MaterialButton btnNext;
+        private MaterialSkin.Controls.MaterialButton btnExit;
     }
 }

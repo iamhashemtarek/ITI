@@ -1,0 +1,40 @@
+﻿@model List<Course>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1>Index</h1>
+<br />
+<a asp-action="Create" asp-controller="Course" class="btn btn-primary" role="button">Add new Course</a>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Degree</th>
+            <th scope="col">MinDegree</th>
+            <th scope="col">Hours</th>
+            <th scope="col">Department Name</th>
+            <th scope ="col">Details</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Degree</td>
+                <td>@item.MinDegree</td>
+                <td>@item.Hours</td>
+                <td>@item.Department.Name</td>
+                <td><a asp-controller="Course" asp-action="Details" asp-route-id ="@item.Id" class="btn btn-success">Details</a></td>
+                <td><a asp-controller="Course" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Edit</a></td>
+                <td><a asp-controller="Course" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -8,7 +8,7 @@ namespace ManagementSystem.Models
         {
             optionsBuilder
                 .UseLazyLoadingProxies()
-                .UseSqlServer("Server=DESKTOP-77H1T1P\\SQLEXPRESS;Database=ManagementSystem;Trusted_Connection=True; TrustServerCertificate=True;");
+                .UseSqlServer("Server=HASHEM\\SQLEXPRESS;Database=ManagementSystem;Trusted_Connection=True; TrustServerCertificate=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

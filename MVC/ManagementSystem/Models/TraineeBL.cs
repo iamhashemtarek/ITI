@@ -10,6 +10,23 @@ namespace ManagementSystem.Models
             DBContext = new ManagementSystemDbContext();
         }
 
+        public List<Trainee> GetAll() => DBContext.Trainees.ToList();
+        public Trainee Get(int id) => DBContext.Trainees.Find(id);
+        public int Add(Trainee trainee)
+        {
+            DBContext.Trainees.Add(trainee);
+            return DBContext.SaveChanges();
+        }
+        public int Update(Trainee trainee)
+        {
+            DBContext.Trainees.Update(trainee);
+            return DBContext.SaveChanges();
+        }
+        public int Delete(Trainee trainee)
+        {
+            DBContext.Trainees.Remove(trainee);
+            return DBContext.SaveChanges();
+        }
         public TraineeResult GetCourseResultById(int courseId, int traineeId)
         {
             var courseResult = DBContext.CoursesResult.FirstOrDefault(cr => cr.TraineeId == traineeId && cr.CourseId == courseId);

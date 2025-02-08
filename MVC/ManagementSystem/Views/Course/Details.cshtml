@@ -1,0 +1,23 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div class="card" style="width: 18rem;">
+    @* <img src="~/Images/@Model.Image" class="card-img-top" alt="..."> *@
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Degree: @Model.Degree</li>
+        <li class="list-group-item">Minimum Degree: @Model.MinDegree</li>
+        <li class="list-group-item">Hours: @Model.Hours</li>
+        <li class="list-group-item">Department: @Model.Department.Name</li>
+    </ul>
+    <div class="card-body">
+        <a asp-controller="Course" asp-action="Index" class="card-link btn btn-primary">back</a>
+    </div>
+</div>

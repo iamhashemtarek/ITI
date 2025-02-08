@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 
-namespace ManagementSystem.Models
+namespace ManagementSystem.ViewModel
 {
-    public class Course
+    public class CourseWithDepartmentViewModel
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Course name is required.")]
@@ -15,12 +16,10 @@ namespace ManagementSystem.Models
         public int MinDegree { get; set; }
         [Range(1, 10, ErrorMessage = "Course hours must be between 1 and 10.")]
 
-        public int Hours {  get; set; }
+        public int Hours { get; set; }
 
-        public virtual ICollection<CourseResult> CourseResults { get; set; } = new List<CourseResult>();
-        public virtual ICollection<Instructor> Instructors { get; set; } = new List<Instructor>();
-        [Required(ErrorMessage = "Department ID is required.")]
-        public int DeptId {  get; set; }    
-        public virtual Department Department { get; set; }
+        public int DeptId { get; set; }
+
+        public SelectList? DepartmentList { get; set; }
     }
 }

@@ -11,7 +11,23 @@ namespace ManagementSystem.Models
             DBContext = new ManagementSystemDbContext();
         }
 
-        public List<Course> GetAll() => DBContext.Courses.ToList(); 
+        public List<Course> GetAll() => DBContext.Courses.ToList();
+        public Course Get(int? id) => DBContext.Courses.Find(id);
+        public int Add(Course course)
+        {
+            DBContext.Courses.Add(course);
+            return DBContext.SaveChanges();
+        }
+        public int Update(Course course)
+        {
+            DBContext.Courses.Update(course);
+            return DBContext.SaveChanges();
+        }
+        public int Delete(Course course)
+        {
+            DBContext.Courses.Remove(course);
+            return DBContext.SaveChanges();
+        }
         public List<ResultsPerCourse> GetAllResults(int courseId)
         {
             List<ResultsPerCourse> resultsPerCourse = new List<ResultsPerCourse>();

@@ -1,0 +1,44 @@
+﻿@model CourseWithDepartmentViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<button type="button" class="btn btn-primary">Primary</button>
+
+<form asp-action="Edit" asp-controller="Course" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="mb-3">
+        <label asp-for=Name class="form-label"></label>
+        <input asp-for="Name" class="form-control">
+       <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for=Degree class="form-label"></label>
+        <input asp-for="Degree" class="form-control">
+        <span asp-validation-for="Degree" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="MinDegree" class="form-label"></label>
+        <input asp-for="MinDegree" class="form-control">
+        <span asp-validation-for="MinDegree" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Hours" class="form-label"></label>
+        <input asp-for="Hours" class="form-control">
+        <span asp-validation-for="Hours" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="DeptId" class="form-label"></label>
+        <select asp-for="DeptId" asp-items="@Model.DepartmentList" aria-label="Default select example">
+            <option value="">-- Select Department --</option>
+        </select>
+        <span asp-validation-for="DeptId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br />
+<br />
+<a asp-action="Index" asp-controller="Course" class="btn btn-primary">back to all courses</a>

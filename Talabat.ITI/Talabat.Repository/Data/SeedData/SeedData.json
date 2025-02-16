@@ -1,0 +1,128 @@
+{
+  "ProductCategories": [
+    {
+      "Name": "Electronics",
+      "Description": "Devices and gadgets",
+      "ImageUrl": "https://example.com/images/electronics.jpg"
+    },
+    {
+      "Name": "Clothing",
+      "Description": "Fashion and apparel",
+      "ImageUrl": "https://example.com/images/clothing.jpg"
+    },
+    {
+      "Name": "Home Appliances",
+      "Description": "Appliances for home use",
+      "ImageUrl": "https://example.com/images/home_appliances.jpg"
+    }
+  ],
+  "ProductBrands": [
+    {
+      "Name": "Apple",
+      "Description": "Premium tech products",
+      "ImageUrl": "https://example.com/images/apple.jpg"
+    },
+    {
+      "Name": "Nike",
+      "Description": "Sportswear brand",
+      "ImageUrl": "https://example.com/images/nike.jpg"
+    },
+    {
+      "Name": "Samsung",
+      "Description": "Electronics and appliances",
+      "ImageUrl": "https://example.com/images/samsung.jpg"
+    }
+  ],
+  "Products": [
+    {
+      "Name": "iPhone 14 Pro",
+      "Description": "Latest Apple smartphone",
+      "Price": 1099.99,
+      "Stock": 50,
+      "ImageUrl": "https://example.com/images/iphone14pro.jpg",
+      "ProductCategoryId": 1,
+      "ProductBrandId": 1
+    },
+    {
+      "Name": "Samsung Galaxy S23",
+      "Description": "Latest Samsung flagship phone",
+      "Price": 999.99,
+      "Stock": 60,
+      "ImageUrl": "https://example.com/images/galaxys23.jpg",
+      "ProductCategoryId": 1,
+      "ProductBrandId": 3
+    },
+    {
+      "Name": "Nike Air Max 270",
+      "Description": "Comfortable running shoes",
+      "Price": 150.00,
+      "Stock": 120,
+      "ImageUrl": "https://example.com/images/airmax270.jpg",
+      "ProductCategoryId": 2,
+      "ProductBrandId": 2
+    },
+    {
+      "Name": "MacBook Pro 16-inch",
+      "Description": "Apple high-performance laptop",
+      "Price": 2499.99,
+      "Stock": 30,
+      "ImageUrl": "https://example.com/images/macbookpro16.jpg",
+      "ProductCategoryId": 1,
+      "ProductBrandId": 1
+    },
+    {
+      "Name": "Samsung Smart TV 55\"",
+      "Description": "4K UHD Smart TV",
+      "Price": 699.99,
+      "Stock": 40,
+      "ImageUrl": "https://example.com/images/samsungtv55.jpg",
+      "ProductCategoryId": 1,
+      "ProductBrandId": 3
+    },
+    {
+      "Name": "Dyson V11 Vacuum Cleaner",
+      "Description": "High-power cordless vacuum cleaner",
+      "Price": 599.99,
+      "Stock": 25,
+      "ImageUrl": "https://example.com/images/dysonv11.jpg",
+      "ProductCategoryId": 3,
+      "ProductBrandId": 3
+    },
+    {
+      "Name": "Apple Watch Series 8",
+      "Description": "Smartwatch with health features",
+      "Price": 399.99,
+      "Stock": 75,
+      "ImageUrl": "https://example.com/images/applewatch8.jpg",
+      "ProductCategoryId": 1,
+      "ProductBrandId": 1
+    },
+    {
+      "Name": "Nike Dri-FIT Running T-shirt",
+      "Description": "Breathable sports T-shirt",
+      "Price": 45.00,
+      "Stock": 200,
+      "ImageUrl": "https://example.com/images/nikedrifit.jpg",
+      "ProductCategoryId": 2,
+      "ProductBrandId": 2
+    },
+    {
+      "Name": "Samsung Refrigerator",
+      "Description": "Smart fridge with touchscreen",
+      "Price": 1999.99,
+      "Stock": 10,
+      "ImageUrl": "https://example.com/images/samsungfridge.jpg",
+      "ProductCategoryId": 3,
+      "ProductBrandId": 3
+    },
+    {
+      "Name": "iPad Pro 12.9-inch",
+      "Description": "Apple tablet for professionals",
+      "Price": 1199.99,
+      "Stock": 50,
+      "ImageUrl": "https://example.com/images/ipadpro.jpg",
+      "ProductCategoryId": 1,
+      "ProductBrandId": 1
+    }
+  ]
+}

@@ -1,6 +1,10 @@
 
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Talabat.APIs.Errors;
+using Talabat.APIs.Middlewares;
+using Talabat.APIs.Profiles;
 using Talabat.Core.Entities;
 using Talabat.Core.Repositories.Contracts;
 using Talabat.Repository;
@@ -34,7 +38,25 @@ namespace Talabat.APIs
             //builder.Services.AddScoped<IProductBrandRepository, ProductBrandRepository>();
             //builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-        
+            builder.Services.AddAutoMapper(M => M.AddProfile(new MappingProfiles()));
+            builder.Services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.InvalidModelStateResponseFactory = (actionContext) =>
+                {
+                    var errors = actionContext.ModelState.Where(p => p.Value.Errors.Count() > 0)
+                                                         .SelectMany(p => p.Value.Errors)
+                                                         .Select(E => E.ErrorMessage)
+                                                         .ToArray();
+
+                    var ValidationErrorRespose = new ApiValidationErrorResponse()
+                    {
+                        Errors = errors
+                    };
+
+                    return new BadRequestObjectResult(ValidationErrorRespose);
+                };
+            });
+
             var app = builder.Build();
 
             using var Scope = app.Services.CreateScope();
@@ -54,7 +76,11 @@ namespace Talabat.APIs
                 logger.LogError(ex, "An error occurred during migration");
             }
 
+
+
             // Configure the HTTP request pipeline.
+            app.UseMiddleware<ExceptionMiddleware>();
+
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();

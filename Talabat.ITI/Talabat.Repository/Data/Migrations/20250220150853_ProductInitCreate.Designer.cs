@@ -10,9 +10,9 @@ using Talabat.Repository.Data;
 
 namespace Talabat.Repository.Data.Migrations
 {
-    [DbContext(typeof(StoreContextSeed))]
-    [Migration("20250212172915_ProductTableCreation")]
-    partial class ProductTableCreation
+    [DbContext(typeof(StoreContext))]
+    [Migration("20250220150853_ProductInitCreate")]
+    partial class ProductInitCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

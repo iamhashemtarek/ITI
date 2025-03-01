@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-center align-items-center mb-3">
+    <div class="btn-group" role="group">
+    @for (category of categories; track $index) {
+        <button class="btn btn-outline-primary" (click)="selectCategory(category)">
+            {{ category.name }}
+        </button>
+    }
+    </div>
+</div>

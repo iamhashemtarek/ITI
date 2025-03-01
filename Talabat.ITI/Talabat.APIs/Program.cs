@@ -1,14 +1,19 @@
 
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using StackExchange.Redis;
 using Talabat.APIs.Errors;
 using Talabat.APIs.Middlewares;
 using Talabat.APIs.Profiles;
 using Talabat.Core.Entities;
+using Talabat.Core.Entities.Identity;
 using Talabat.Core.Repositories.Contracts;
 using Talabat.Repository;
 using Talabat.Repository.Data;
+using Talabat.Repository.Identity;
 
 namespace Talabat.APIs
 {
@@ -29,6 +34,23 @@ namespace Talabat.APIs
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
 
+
+            builder.Services.AddDbContext<AppIdentityDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection"));
+            });
+
+            builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
+            {
+
+            }).AddEntityFrameworkStores<AppIdentityDbContext>();
+            
+
+            builder.Services.AddSingleton<IConnectionMultiplexer>((ServiceProvider) =>
+            {
+                return ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Redis"));
+            });
+
             builder.Services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Talabat.APIs", Version = "v1" });
@@ -38,6 +60,8 @@ namespace Talabat.APIs
             //builder.Services.AddScoped<IProductBrandRepository, ProductBrandRepository>();
             //builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            builder.Services.AddScoped<ICustomerBasketRepository, CustomerBasketRepository>(); 
+
             builder.Services.AddAutoMapper(M => M.AddProfile(new MappingProfiles()));
             builder.Services.Configure<ApiBehaviorOptions>(options =>
             {
@@ -62,11 +86,17 @@ namespace Talabat.APIs
             using var Scope = app.Services.CreateScope();
             var Services = Scope.ServiceProvider;
             var Context = Services.GetRequiredService<StoreContext>();
+            var _identityDbContext = Services.GetRequiredService<AppIdentityDbContext>();
             var LoggerFactory = Services.GetRequiredService<ILoggerFactory>();
             try
             {
                 await Context.Database.MigrateAsync();
+                await _identityDbContext.Database.MigrateAsync();
+
                 await StoreContextSeed.SeedAsync(Context);
+
+                var _userManager = Services.GetRequiredService<UserManager<AppUser>>();
+                await AppIdnetityDbContextSeed.SeedAsync(_userManager);
 
             }
             catch (Exception ex)

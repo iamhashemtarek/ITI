@@ -9,17 +9,17 @@ using Talabat.Core.Entities;
 namespace Talabat.Core.Specifications
 {    public class ProductWithBrandAndCategorySpecification : Specification<Product>
     {
-        public ProductWithBrandAndCategorySpecification(string? sort, int? brandId, int? categoryId) :
+        public ProductWithBrandAndCategorySpecification(ProductSpecParams productSpec) :
             base(p => 
-                    (!brandId.HasValue || p.ProductBrandId == brandId.Value) &&
-                                (!categoryId.HasValue || p.ProductCategoryId == categoryId.Value)
+                    (!productSpec.BrandId.HasValue || p.ProductBrandId == productSpec.BrandId.Value) &&
+                                (!productSpec.CategoryId.HasValue || p.ProductCategoryId == productSpec.CategoryId.Value)
             )
         {
             _AddIncludes();
 
-            if (!String.IsNullOrEmpty(sort))
+            if (!String.IsNullOrEmpty(productSpec.Sort))
             {
-                switch (sort)
+                switch (productSpec.Sort)
                 {
                     case "priceAsc":
                         AddOrderBy(p => p.Price);
@@ -33,6 +33,12 @@ namespace Talabat.Core.Specifications
                 }
             }else 
                 AddOrderBy(p => p.Name);
+
+            if (productSpec.PageIndex.HasValue && productSpec.PageSize.HasValue)
+            {
+                Skip = (productSpec.PageIndex.Value - 1) * productSpec.PageSize.Value;
+                Take = productSpec.PageSize.Value;
+            }
         }
 
         public ProductWithBrandAndCategorySpecification(int id)

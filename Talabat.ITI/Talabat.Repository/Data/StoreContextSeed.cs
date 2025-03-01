@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -8,7 +9,7 @@ using Talabat.Core.Entities;
 
 namespace Talabat.Repository.Data
 {
-    public class StoreContextSeed
+    public static class StoreContextSeed
     {
         public static async Task SeedAsync(StoreContext context)
         {

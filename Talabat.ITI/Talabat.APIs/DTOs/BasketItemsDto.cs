@@ -24,6 +24,6 @@ namespace Talabat.APIs.DTOs
         [Required]
         [Range(1, int.MaxValue, ErrorMessage = "quantity must at least one")]
 
-        public int Quantity { get; set; }
+        public int Quantity { get; set; } 
     }
 }

@@ -13,7 +13,7 @@ namespace Talabat.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {
-        private protected    readonly StoreContext _storeContext;
+        private protected readonly StoreContext _storeContext;
 
         public GenericRepository(StoreContext storeContext)
         {
@@ -45,5 +45,10 @@ namespace Talabat.Repository
             return SpecificationEvaluator<T>.GetQuery(_storeContext.Set<T>(), spec);
         }
 
+        public async Task AddAsync(T entity) => await _storeContext.AddAsync(entity);
+
+        public void Update(T entity) => _storeContext.Update(entity);
+
+        public void Delete(T entity) => _storeContext.Remove(entity);
     }
 }

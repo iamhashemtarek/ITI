@@ -8,12 +8,15 @@ using StackExchange.Redis;
 using Talabat.APIs.Errors;
 using Talabat.APIs.Middlewares;
 using Talabat.APIs.Profiles;
+using Talabat.Core;
 using Talabat.Core.Entities;
 using Talabat.Core.Entities.Identity;
 using Talabat.Core.Repositories.Contracts;
+using Talabat.Core.Services.Contracts;
 using Talabat.Repository;
 using Talabat.Repository.Data;
 using Talabat.Repository.Identity;
+using Talabat.Service;
 
 namespace Talabat.APIs
 {
@@ -56,11 +59,11 @@ namespace Talabat.APIs
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Talabat.APIs", Version = "v1" });
             });
 
-            //builder.Services.AddScoped<IProductRepository, ProductRepository>();
-            //builder.Services.AddScoped<IProductBrandRepository, ProductBrandRepository>();
-            //builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
+      
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            builder.Services.AddScoped<ICustomerBasketRepository, CustomerBasketRepository>(); 
+            builder.Services.AddScoped(typeof(IOrderService), typeof(OrderService));
+            builder.Services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
+            builder.Services.AddScoped<ICustomerBasketRepository, CustomerBasketRepository>();
 
             builder.Services.AddAutoMapper(M => M.AddProfile(new MappingProfiles()));
             builder.Services.Configure<ApiBehaviorOptions>(options =>

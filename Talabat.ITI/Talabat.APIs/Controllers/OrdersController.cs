@@ -22,29 +22,37 @@ namespace Talabat.APIs.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Order>> CreateOrder(OrderDto orderDto)
+        public async Task<ActionResult<OrderToReturnDto>> CreateOrder(OrderDto orderDto)
         {
             var address = _mapper.Map<AddressDto, Address>(orderDto.ShippingAddress);
             var order = await _orderService.CreateOrderAsync(orderDto.BuyerEmail, orderDto.BasketId, orderDto.DeliveryMethodId, address);
 
             if(order == null) return BadRequest(new ApiResponse(400));
-            return Ok(order);
+            return Ok(_mapper.Map<Order, OrderToReturnDto>(order));
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<Order>>> GetOrdersForUser(string buyerEmail)
+        public async Task<ActionResult<IReadOnlyList<OrderToReturnDto>>> GetOrdersForUser(string buyerEmail)
         {
             var orders = await _orderService.GerOrdersForUserAsync(buyerEmail);
             if (orders == null) return NotFound(new ApiResponse(404));
-            return Ok(orders);
+            return Ok(_mapper.Map<IReadOnlyList<Order>, IReadOnlyList<OrderToReturnDto>>(orders));
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Order>> GetOrderByIdForUser(int id, string buyerEmail)
+        public async Task<ActionResult<OrderToReturnDto>> GetOrderByIdForUser(int id, string buyerEmail)
         {
             var order = await _orderService.GetOrderByIdForUserAsync(id, buyerEmail);
             if (order == null) return NotFound(new ApiResponse(404));
-            return Ok(order);
+            return Ok(_mapper.Map<Order, OrderToReturnDto>(order));
+        }
+
+        [HttpGet("deliveryMethods")]
+        public async Task<ActionResult<IReadOnlyList<DeliveryMethod>>> GetDeliveryMethods()
+        {
+            var deliveryMethods = await _orderService.GetDeliveryMethodsAsync();
+            if (deliveryMethods == null) return NotFound(new ApiResponse(404));
+            return Ok(deliveryMethods);
         }
     }
 }

@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Talabat.APIs.DTOs;
 using Talabat.APIs.Errors;
 using Talabat.Core.Entities;
 using Talabat.Core.Repositories.Contracts;
+using Talabat.Core.Services.Contracts;
 using Talabat.Core.Specifications;
 
 namespace Talabat.APIs.Controllers
@@ -13,28 +15,22 @@ namespace Talabat.APIs.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly IGenericRepository<Product> _productRepo;
-        private readonly IGenericRepository<ProductBrand> _productBrandRepository;
-        private readonly IGenericRepository<ProductCategory> _productCategoryRepository;
+        
         private readonly IMapper _mapper;
+        private readonly IProductService _productService;
 
-        public ProductController(IGenericRepository<Product> productRepository,
-            IGenericRepository<ProductBrand> productBrandRepository,
-            IGenericRepository<ProductCategory> productCategoryRepository,
-            IMapper mapper)
+        public ProductController(IMapper mapper, IProductService productService)
         {
-            _productRepo = productRepository;
-            _productBrandRepository = productBrandRepository;
-            _productCategoryRepository = productCategoryRepository;
             _mapper = mapper;
+            _productService = productService;
         }
+
+        [Authorize]
         [HttpGet]
         public async  Task<ActionResult<IReadOnlyList<Product>>> GetProducts([FromQuery] ProductSpecParams productSpec)
         {
 
-            var spec = new ProductWithBrandAndCategorySpecification(productSpec);
-            var products = await _productRepo.GetAllWithSpecAsync(spec);
-
+            var products = await _productService.GetProductsAsync(productSpec);
             if (products.Any())
             {
                 return Ok(_mapper.Map<IEnumerable<Product>, IEnumerable<ProductToReturnDto>>(products));
@@ -44,8 +40,7 @@ namespace Talabat.APIs.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
-            var spec = new ProductWithBrandAndCategorySpecification(id);
-            var product = await _productRepo.GetWithSpecAsync(spec);
+            var product = await _productService.GetProductByIdAsync(id);
 
             if (product == null) 
                 return NotFound(new ApiResponse(404));
@@ -56,41 +51,41 @@ namespace Talabat.APIs.Controllers
         [HttpGet("brands")]
         public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetBrands()
         {
-            var brands = await _productBrandRepository.GetAllAsync();
+            var brands = await _productService.GetProductBrandsAsync();
             if (brands is null)
                 return NotFound(new ApiResponse(404));
 
             return Ok(brands);
         }
 
-        [HttpGet("brands/{id}")]
-        public async Task<ActionResult<ProductBrand>> GetBrand(int id)
-        {
-            var brand = await _productBrandRepository.GetByIdAsync(id);
-            if (brand is null)
-                return NotFound(new ApiResponse(404));
+        //[HttpGet("brands/{id}")]
+        //public async Task<ActionResult<ProductBrand>> GetBrand(int id)
+        //{
+        //    var brand = await _productBrandRepository.GetByIdAsync(id);
+        //    if (brand is null)
+        //        return NotFound(new ApiResponse(404));
 
-            return Ok(brand);
-        }
+        //    return Ok(brand);
+        //}
 
         [HttpGet("categories")]
         public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetCategories()
         {
-            var categories = await _productCategoryRepository.GetAllAsync();
+            var categories = await _productService.GetProductCategoriesAsync();
             if (categories is null)
                 return NotFound(new ApiResponse(404));
 
             return Ok(categories);
         }
 
-        [HttpGet("categories/{id}")]
-        public async Task<ActionResult<ProductCategory>> GetCategory(int id)
-        {
-            var category = await _productCategoryRepository.GetByIdAsync(id);
-            if (category is null)
-                return NotFound(new ApiResponse(404));
+        //[HttpGet("categories/{id}")]
+        //public async Task<ActionResult<ProductCategory>> GetCategory(int id)
+        //{
+        //    var category = await _productCategoryRepository.GetByIdAsync(id);
+        //    if (category is null)
+        //        return NotFound(new ApiResponse(404));
 
-            return Ok(category);
-        }
+        //    return Ok(category);
+        //}
     }
 }

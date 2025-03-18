@@ -1,0 +1,46 @@
+﻿@model QuickSort.Models.SortingModel
+
+@{
+    ViewData["Title"] = "Sorting Algorithms";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">Number Sorting Application</h2>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Enter a list of numbers separated by commas and choose a sorting algorithm.</p>
+
+                    <form asp-controller="Sorting" asp-action="Index" method="post">
+                        <div class="form-group">
+                            <label asp-for="Numbers" class="form-label"></label>
+                            <input asp-for="Numbers" class="form-control" placeholder="e.g., 5,3,8,1,9,4" />
+                            <span asp-validation-for="Numbers" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label asp-for="Algorithm" class="form-label"></label>
+                            <select asp-for="Algorithm" class="form-select">
+                                <option value="">-- Select an algorithm --</option>
+                                <option value="bubble">Bubble Sort</option>
+                                <option value="quick">Quick Sort</option>
+                            </select>
+                            <span asp-validation-for="Algorithm" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <button type="submit" class="btn btn-primary">Sort Numbers</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

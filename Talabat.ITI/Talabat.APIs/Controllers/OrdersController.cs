@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using Talabat.APIs.DTOs;
 using Talabat.APIs.Errors;
 using Talabat.Core.Entities.Order_Aggregate;
@@ -21,11 +23,14 @@ namespace Talabat.APIs.Controllers
             _mapper = mapper;
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<OrderToReturnDto>> CreateOrder(OrderDto orderDto)
         {
+            var email = User.FindFirstValue(ClaimTypes.Email);
             var address = _mapper.Map<AddressDto, Address>(orderDto.ShippingAddress);
-            var order = await _orderService.CreateOrderAsync(orderDto.BuyerEmail, orderDto.BasketId, orderDto.DeliveryMethodId, address);
+            
+            var order = await _orderService.CreateOrderAsync(email, orderDto.BasketId, orderDto.DeliveryMethodId, address);
 
             if(order == null) return BadRequest(new ApiResponse(400));
             return Ok(_mapper.Map<Order, OrderToReturnDto>(order));

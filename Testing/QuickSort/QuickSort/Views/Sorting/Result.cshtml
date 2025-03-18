@@ -1,0 +1,45 @@
+﻿@model QuickSort.Models.SortingViewModel
+
+@{
+    ViewData["Title"] = "Sorting Results";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h2 class="mb-0">Sorting Results</h2>
+                </div>
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h4>Algorithm: @Model.AlgorithmName</h4>
+                        <p>Execution Time: @Model.ExecutionTime</p>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <h5>Original Array:</h5>
+                            <div class="alert alert-info">
+                                @string.Join(", ", Model.OriginalNumbers)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h5>Sorted Array:</h5>
+                            <div class="alert alert-success">
+                                @string.Join(", ", Model.SortedNumbers)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <a asp-controller="Sorting" asp-action="Index" class="btn btn-primary">Sort Another Array</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

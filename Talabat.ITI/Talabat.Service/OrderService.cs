@@ -50,7 +50,7 @@ namespace Talabat.Service
             var subtotal = orderItems.Sum(item => item.Quantity * item.Price);
 
             // create order
-            var order = new Order(buyerEmail, shippingAddress, deliveryMethod, orderItems, subtotal);
+            var order = new Order(buyerEmail, shippingAddress, deliveryMethod, orderItems, subtotal, basket.PaymentIntentId);
             await _unitOfWork.Repository<Order>().AddAsync(order);
 
             // save to db
